@@ -33,6 +33,20 @@ nav a.on,nav a:hover{background:var(--soft);color:var(--ind)}
 .btn.wa{background:#25a15a}
 @media(max-width:760px){nav{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap}.bar{flex-wrap:wrap}nav a{white-space:nowrap}}
 main{max-width:1100px;margin:auto;padding:20px 16px 40px}
+.logo img{height:44px;width:auto;display:block;background:#fff;border-radius:10px;padding:3px 8px}
+.badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:5px 14px;font-size:.8rem;font-weight:600;margin:20px 0 10px}
+.flags svg,.ico svg{width:46px;height:31px;border-radius:5px;box-shadow:0 0 0 1px rgba(0,0,0,.18);display:block}
+.flags svg{margin:0 auto 6px}
+.hero{position:relative;overflow:hidden}
+.plane{position:absolute;top:14px;left:-60px;font-size:1.8rem;opacity:.85;animation:fly 10s linear infinite;pointer-events:none}
+@keyframes fly{to{left:105%}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.view.on .card,.view.on .step,.view.on .faq details,.view.on .cta{animation:rise .6s ease both}
+.grid>*:nth-child(2){animation-delay:.08s!important}.grid>*:nth-child(3){animation-delay:.16s!important}.grid>*:nth-child(4){animation-delay:.24s!important}
+.flags a{animation:bob 3s ease-in-out infinite}.flags a:nth-child(even){animation-delay:-1.5s}
+.btn{transition:transform .2s}.btn:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 .view{display:none}.view.on{display:block}
 .hero{background:linear-gradient(135deg,var(--ind),#2d8f86 90%);color:#fff;border-radius:24px;padding:36px 24px;margin-bottom:28px}
 .hero h1{font-size:clamp(1.7rem,5vw,2.8rem)}.hero p{max-width:560px;opacity:.95}
@@ -67,16 +81,17 @@ footer{background:var(--hd);border-top:1px solid var(--bd);text-align:center;pad
 </head>
 <body>
 <header><div class="bar">
-<a class="logo" href="#home">PARK<b> </b><small>INTERNATIONAL EDUCATION</small></a>
+<a class="logo" href="#home" aria-label="PARK International Education"><img src="park-logo.png" alt="PARK International Education"></a>
 <nav id="nav"></nav>
 <div class="tools"><button class="lang" id="lang" aria-label="Switch language">தமிழ்</button></div>
 </div></header>
 
 <main>
 <section class="view" id="v-home">
-<div class="hero">
+<div class="hero"><span class="plane" aria-hidden="true">✈️</span>
+<div class="badge">🏅 18+ Years of Excellence · Since 2008</div>
 <h1><span class="en">Your Dream Course Starts Here</span><span class="ta">உங்கள் கல்வி கனவு இங்கே தொடங்கும்</span></h1>
-<p><span class="en">India &amp; abroad studies after 12th: MBBS, Engineering, Nursing, Paramedical, Arts &amp; Science, Aviation, Pharmacy and Allied Health Sciences, with full guidance on fees, scholarship, loan, visa and travel.</span><span class="ta">+2 முடித்த பிறகு இந்தியா &amp; வெளிநாடுகளில் MBBS, Engineering, Nursing, Paramedical உட்பட அனைத்து படிப்புகளுக்கும் முழு வழிகாட்டுதல்.</span></p>
+<p><span class="en">India &amp; abroad studies after 12th: Medicine, Engineering, Nursing, Law, Paramedical, Allied Health Science, Pharmacy, Aviation, Arts &amp; Science and BPT, with full guidance on fees, scholarship, loan, visa and travel.</span><span class="ta">+2 முடித்த பிறகு இந்தியா &amp; வெளிநாடுகளில் MBBS, Engineering, Nursing, Paramedical உட்பட அனைத்து படிப்புகளுக்கும் முழு வழிகாட்டுதல்.</span></p>
 <div class="row"><a class="btn" href="#apply"><span class="en">Get a Free Call Back</span><span class="ta">இலவச அழைப்பு பெறுங்கள்</span></a>
 <a class="btn wa" href="https://wa.me/918807744900?text=Hi%20PARK%2C%20I%20want%20MBBS%20abroad%20details" target="_blank" rel="noopener">WhatsApp</a></div>
 </div>
@@ -101,6 +116,7 @@ footer{background:var(--hd);border-top:1px solid var(--bd);text-align:center;pad
 <div class="faq">
 <details><summary>Can I study MBBS abroad after +2?</summary><p>Yes, many students do. Eligibility, including NEET requirements for Indian students, follows current official rules. Our counsellors confirm this for your case.</p></details>
 <details><summary>Which country has the lowest fees?</summary><p>It depends on the university and year. Call us for a current, written fee comparison.</p></details>
+<details><summary>Will my foreign MBBS be valid in India?</summary><p>It depends on the specific university and programme meeting current NMC rules. We check each one with you before you decide, and we do not treat all programmes as equal.</p></details>
 <details><summary>Do you help with education loans?</summary><p>Yes. We guide you on documents and the loan process.</p></details>
 </div>
 
@@ -117,6 +133,7 @@ footer{background:var(--hd);border-top:1px solid var(--bd);text-align:center;pad
 <section class="view" id="v-countries">
 <h2 class="t"><span class="en">MBBS Abroad – Countries</span><span class="ta">MBBS – நாடுகள்</span></h2>
 <div class="grid" id="cgrid"></div>
+<div class="card" style="margin-top:16px"><h3>Your written fee sheet will show</h3><p>Tuition per year and total course duration · Hostel and food · Insurance, visa and travel · Admission and university charges · Academic year and currency assumptions · Refund terms</p></div>
 <div class="note">Fees, duration and university lists change every year. Ask for the current written details before you decide. Eligibility is confirmed against current official rules.</div>
 <div class="cta"><h2>Not sure which country?</h2><p>Tell us your NEET status and budget. We will suggest the best fit.</p><a class="btn" href="#apply">Get Free Guidance</a></div>
 </section>
@@ -132,6 +149,13 @@ footer{background:var(--hd);border-top:1px solid var(--bd);text-align:center;pad
 <div class="step"><h3>Visa, travel and hostel</h3><p>Visa support, travel guidance and hostel help.</p></div>
 </div>
 <div class="note">Required documents can vary by country and university. Your counsellor will give the exact list.</div>
+<h2 class="t">Verify before you pay</h2>
+<div class="steps">
+<div class="step"><h3>Check the exact degree</h3><p>Ask which degree the university awards and how long it takes. Programme structure differs between countries.</p></div>
+<div class="step"><h3>Check NMC rules for MBBS</h3><p>Foreign medical programmes must meet NMC requirements on duration, internship, English medium and curriculum to be eligible for registration in India.</p></div>
+<div class="step"><h3>Get fees in writing</h3><p>Tuition, hostel, food, insurance, travel and service charges, with the academic year and currency assumptions.</p></div>
+<div class="step"><h3>Ask about refunds</h3><p>Know the refund terms if admission or a visa is not successful, before paying.</p></div>
+</div>
 <div class="cta"><h2>Start your application</h2><a class="btn" href="#apply">Apply Now</a></div>
 </section>
 
@@ -157,7 +181,7 @@ footer{background:var(--hd);border-top:1px solid var(--bd);text-align:center;pad
 </main>
 
 <footer>
-<b>PARK International Education</b> · Tirunelveli | Madurai<br>No. 6/1, Pioneer Kumarasamy Nagar, Vasanth Nagar, Near RHOCK Hospital, Opp. New Bus Stand, Tirunelveli – 627007<br>
+<b>PARK International Education</b> · Direct College Admission Office · Since 2008<br>Head Office: Tirunelveli · Branch: Madurai<br>No. 6/1, Pioneer Kumarasamy Nagar, Vasanth Nagar, Near RHOCK Hospital, Opp. New Bus Stand, Tirunelveli – 627007<br>
 www.parkabroad.com · admissions@parkabroad.com<br>
 Branches: Ramanathapuram · Trichy · Karur · Salem · Chennai · New Delhi
 </footer>
@@ -171,15 +195,17 @@ Branches: Ramanathapuram · Trichy · Karur · Salem · Chennai · New Delhi
 <script>
 var pages=[["home","Home","முகப்பு"],["courses","Courses","படிப்புகள்"],["countries","Countries","நாடுகள்"],["process","Admission","Admission"],["branches","Branches","கிளைகள்"],["apply","Apply","விண்ணப்பம்"]];
 var countries=[["🇺🇿","Uzbekistan","A fast-growing MBBS destination."],["🇵🇭","Philippines","Known for English-medium teaching."],["🇰🇿","Kazakhstan","Central Asian option with established universities."],["🇰🇬","Kyrgyzstan","Often chosen for budget-friendly options."],["🇻🇳","Vietnam","Southeast Asian option for medical studies."],["🇷🇺","Russia","Long-established medical universities."],["🇬🇪","Georgia","European-style campus life."],["🇹🇱","Timor-Leste","An emerging option for MBBS."]];
-var branches=[["Tirunelveli","Head office","No. 6/1, Pioneer Kumarasamy Nagar, Vasanth Nagar, Near RHOCK Hospital, Opp. New Bus Stand, Tirunelveli – 627007."],["Madurai","Head office"],["Ramanathapuram","Branch"],["Trichy","Branch"],["Karur","Branch"],["Salem","Branch"],["Chennai","Branch"],["New Delhi","Branch"]];
+var branches=[["Tirunelveli","Head office","No. 6/1, Pioneer Kumarasamy Nagar, Vasanth Nagar, Near RHOCK Hospital, Opp. New Bus Stand, Tirunelveli – 627007."],["Madurai","Branch","No. 64, Press Colony, RTO Office Road, Opp. Mattuthavani Bus Stand, Madurai – 625007."],["Ramanathapuram","Branch"],["Trichy","Branch"],["Karur","Branch"],["Salem","Branch"],["Chennai","Branch"],["New Delhi","Branch"]];
 var $=function(i){return document.getElementById(i)};
-var courses=[["🩺","MBBS","Medical degree in India and abroad."],["⚙️","Engineering","Engineering degree courses and college selection."],["💉","Nursing","Nursing courses in India and abroad."],["🚑","Paramedical","Paramedical diploma and degree courses."],["📚","Arts &amp; Science","Arts and science degree programmes."],["✈️","Aviation","Aviation-related courses and careers."],["💊","Pharmacy","Pharmacy courses and college guidance."],["🧬","Allied Health Sciences","Health-science courses beyond MBBS and nursing."]];
+var FL={"Uzbekistan":"<rect width='60' height='13' fill='#0099b5'/><rect y='13' width='60' height='14' fill='#fff'/><rect y='27' width='60' height='13' fill='#1eb53a'/><rect y='12.4' width='60' height='1.2' fill='#ce1126'/><rect y='26.4' width='60' height='1.2' fill='#ce1126'/><circle cx='9' cy='6.5' r='3.2' fill='#fff'/><circle cx='10.4' cy='6.5' r='2.7' fill='#0099b5'/>","Philippines":"<rect width='60' height='20' fill='#0038a8'/><rect y='20' width='60' height='20' fill='#ce1126'/><path d='M0 0L34 20L0 40Z' fill='#fff'/><circle cx='9' cy='20' r='4' fill='#fcd116'/>","Kazakhstan":"<rect width='60' height='40' fill='#00afca'/><circle cx='30' cy='17' r='7' fill='#fec50c'/><rect x='12' y='30' width='36' height='3' rx='1.5' fill='#fec50c'/>","Kyrgyzstan":"<rect width='60' height='40' fill='#e8112d'/><circle cx='30' cy='20' r='11' fill='#ffef00'/><circle cx='30' cy='20' r='6' fill='#e8112d'/>","Vietnam":"<rect width='60' height='40' fill='#da251d'/><polygon points='30,8 33.5,17.5 43.5,17.5 35.5,23.5 38.5,33 30,27 21.5,33 24.5,23.5 16.5,17.5 26.5,17.5' fill='#ff0'/>","Russia":"<rect width='60' height='14' fill='#fff'/><rect y='13' width='60' height='14' fill='#0039a6'/><rect y='26' width='60' height='14' fill='#d52b1e'/>","Georgia":"<rect width='60' height='40' fill='#fff'/><rect x='26' width='8' height='40' fill='#f00'/><rect y='16' width='60' height='8' fill='#f00'/><g fill='#f00'><path transform='translate(13 8) scale(1.5)' d='M-1-3h2v2h2v2h-2v2h-2v-2h-2v-2h2z'/><path transform='translate(47 8) scale(1.5)' d='M-1-3h2v2h2v2h-2v2h-2v-2h-2v-2h2z'/><path transform='translate(13 32) scale(1.5)' d='M-1-3h2v2h2v2h-2v2h-2v-2h-2v-2h2z'/><path transform='translate(47 32) scale(1.5)' d='M-1-3h2v2h2v2h-2v2h-2v-2h-2v-2h2z'/></g>","Timor-Leste":"<rect width='60' height='40' fill='#dc241f'/><path d='M0 0L30 20L0 40Z' fill='#ffc726'/><path d='M0 0L20 20L0 40Z' fill='#000'/><polygon points='7,15 8.2,18.8 12,18.8 9,21 10.1,24.8 7,22.5 3.9,24.8 5,21 2,18.8 5.8,18.8' fill='#fff'/>"};
+var F=function(n){return "<svg viewBox='0 0 60 40' role='img' aria-label='"+n+" flag'>"+(FL[n]||"")+"</svg>"};
+var courses=[["🩺","Medicine","Medicine (MBBS) in India and abroad."],["🏗️","Engineering","Engineering degree courses and college selection."],["💉","Nursing","Nursing courses in India and abroad."],["⚖️","Law","Law degree courses and college guidance."],["🚑","Paramedical","Paramedical diploma and degree courses."],["🧬","Allied Health Science","Health-science courses beyond MBBS and nursing."],["💊","Pharmacy","Pharmacy courses and college guidance."],["✈️","Aviation","Aviation-related courses and careers."],["🎓","Arts &amp; Science","Arts and science degree programmes."],["🦴","BPT","Bachelor of Physiotherapy courses and colleges."]];
 var ch=courses.map(function(c){return '<div class="card"><span class="ico">'+c[0]+'</span><h3>'+c[1]+'</h3><p>'+c[2]+'</p><p style="margin-top:10px"><a href="#apply" style="color:var(--teal);font-weight:600">Get details →</a></p></div>'}).join("");
 $("hcourses").innerHTML=ch;$("cgrid2").innerHTML=ch;
 $("course").innerHTML=courses.map(function(c){return '<option>'+c[1]+'</option>'}).join("");
 $("nav").innerHTML=pages.map(function(p){return '<a href="#'+p[0]+'" data-p="'+p[0]+'"><span class="en">'+p[1]+'</span><span class="ta">'+p[2]+'</span></a>'}).join("");
-$("flags").innerHTML=countries.map(function(c){return '<a href="#countries"><span>'+c[0]+'</span>'+c[1]+'</a>'}).join("");
-$("cgrid").innerHTML=countries.map(function(c){return '<div class="card"><span class="ico">'+c[0]+'</span><h3>MBBS in '+c[1]+'</h3><p>'+c[2]+'</p><p style="margin-top:10px"><a href="#apply" style="color:var(--teal);font-weight:600">Ask for fees and universities →</a></p></div>'}).join("");
+$("flags").innerHTML=countries.map(function(c){return '<a href="#countries"><span>'+F(c[1])+'</span>'+c[1]+'</a>'}).join("");
+$("cgrid").innerHTML=countries.map(function(c){return '<div class="card"><span class="ico">'+F(c[1])+'</span><h3>MBBS in '+c[1]+'</h3><p>'+c[2]+'</p><p style="margin-top:10px"><a href="#apply" style="color:var(--teal);font-weight:600">Ask for fees and universities →</a></p></div>'}).join("");
 $("bgrid").innerHTML=branches.map(function(b){return '<div class="card"><span class="ico">📍</span><h3>'+b[0]+'</h3><p>'+b[1]+'. '+(b[2]||'Call to confirm address and visiting hours.')+'</p></div>'}).join("");
 $("c").innerHTML=countries.map(function(c){return '<option>'+c[1]+'</option>'}).join("")+'<option>Not decided</option>';
 $("b").innerHTML=branches.map(function(b){return '<option>'+b[0]+'</option>'}).join("");
